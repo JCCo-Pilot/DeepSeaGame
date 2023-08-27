@@ -24,11 +24,15 @@ public class submarineJPanel extends JPanel{
 	private boolean result;
 	private int player1xVal;
 	private int player1yVal;
+	private int player2xVal = 425;
+	private int player2yVal = 50;
 	public submarineJPanel(ArrayList<Treasure> r) {
 		ruins = r;
 		result = true;
 		player1xVal = 500;
 		player1yVal = 50;
+		//player2xVal = 350;
+		//player2yVal = 50;
 		try {
 			image = ImageIO.read(new File("submarine.png"));
 			tier1 = ImageIO.read(new File("tier1treasure.png"));
@@ -101,6 +105,7 @@ public class submarineJPanel extends JPanel{
 			}
 			
 		}
-		graph.drawRect(player1xVal,player1yVal,30,30);
+		//graph.drawImage(player1icon,660,40,Color.WHITE,null);
+		graph.drawImage(player2icon,1140,50,Color.WHITE,null);
 	}
 }
