@@ -35,6 +35,10 @@ public class submarineJPanel extends JPanel{
 			tier2 = ImageIO.read(new File("tier2treasure.png"));
 			tier3 = ImageIO.read(new File("tier3treasure.png"));
 			tier4 = ImageIO.read(new File("tier4treasure.png"));
+			player1icon = ImageIO.read(new File ("player1.png"));
+			player2icon = ImageIO.read(new File ("player2.png"));
+			player3icon = ImageIO.read(new File ("player3.png"));
+			player4icon = ImageIO.read(new File ("player4.png"));
 		}
 		catch(Exception E) {
 			System.out.println("Error");
