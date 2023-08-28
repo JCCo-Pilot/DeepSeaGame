@@ -118,12 +118,12 @@ public class submarineJPanel extends JPanel{
 		graph.drawImage(player1icon,values.getX(1),values.getY(1),null);
 	}
 	public void draw2(){
-
+		graph.drawImage(player2icon,values.getX(2),values.getY(2),null);
 	}
 	public void draw3(){
-
+		graph.drawImage(player3icon,values.getX(3),values.getY(3),null);
 	}
 	public void draw4(){
-
+		graph.drawImage(player4icon,values.getX(0),values.getY(0),null);
 	}
 }
