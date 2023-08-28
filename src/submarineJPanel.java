@@ -26,7 +26,9 @@ public class submarineJPanel extends JPanel{
 	private int player1yVal;
 	private int player2xVal = 425;
 	private int player2yVal = 50;
+	private treasurePlacement values;
 	public submarineJPanel(ArrayList<Treasure> r) {
+		values = new treasurePlacement();
 		ruins = r;
 		result = true;
 		player1xVal = 500;
@@ -59,6 +61,10 @@ public class submarineJPanel extends JPanel{
 		graph.drawImage(image,0,10,600,150,null);
 		
 		refresh();
+		draw1();
+		draw2();
+		draw3();
+		draw4();
 	}
 	public void move(int i, Player user1, boolean diving){
 		player1xVal +=10;
@@ -106,6 +112,18 @@ public class submarineJPanel extends JPanel{
 			
 		}
 		//graph.drawImage(player1icon,660,40,Color.WHITE,null);
-		graph.drawImage(player2icon,1140,50,Color.WHITE,null);
+		//graph.drawImage(player2icon,110+160,230+180,Color.WHITE,null);
+	}
+	public void draw1(){
+		graph.drawImage(player1icon,values.getX(1),values.getY(1),null);
+	}
+	public void draw2(){
+
+	}
+	public void draw3(){
+
+	}
+	public void draw4(){
+
 	}
 }
