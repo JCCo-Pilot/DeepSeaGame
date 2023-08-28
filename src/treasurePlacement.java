@@ -3,12 +3,16 @@ import java.util.*;
 public class treasurePlacement {
     private ArrayList<Integer> xValues;
     private ArrayList<Integer> yValues;
+    private int submarine1;
+    private int submarine2;
+    private int submarine3;
+    private int submarine4;
     public treasurePlacement(){
         int x = 660;
         int y = 50;
         xValues = new ArrayList<Integer>();
         yValues = new ArrayList<Integer>();
-        for (int i = 0; i<6;i++){
+        for (int i = 0; i<7;i++){
             xValues.add(x);
             yValues.add(y);
             x+=160;
@@ -23,6 +27,13 @@ public class treasurePlacement {
         x = 110;
         y +=180;
         for (int i = 0; i<11;i++){
+            xValues.add(x);
+            yValues.add(y);
+            x+=160;
+        }
+        y+=180;
+        x =110;
+        for (int i = 0; i<3;i++){
             xValues.add(x);
             yValues.add(y);
             x+=160;
