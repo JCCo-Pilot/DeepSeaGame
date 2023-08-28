@@ -22,19 +22,28 @@ public class submarineJPanel extends JPanel{
 	private ArrayList<Treasure> ruins;
 	private Graphics graph;
 	private boolean result;
-	private int player1xVal;
-	private int player1yVal;
-	private int player2xVal = 425;
-	private int player2yVal = 50;
+	private int player1BaseY;
+	private int player1BaseX;
+	private int player2BaseY;
+	private int player2BaseX;
+	private int player3BaseY;
+	private int player3BaseX;
+	private int player4BaseY;
+	private int player4BaseX;
+
 	private treasurePlacement values;
 	public submarineJPanel(ArrayList<Treasure> r) {
 		values = new treasurePlacement();
 		ruins = r;
 		result = true;
-		player1xVal = 500;
-		player1yVal = 50;
-		//player2xVal = 350;
-		//player2yVal = 50;
+		player1BaseX=50;
+		player1BaseY=50;
+		player2BaseX= 150;
+		player2BaseY=50;
+		player3BaseX= 250;
+		player3BaseY=50;
+		player4BaseX= 350;
+		player4BaseY=50;
 		try {
 			image = ImageIO.read(new File("submarine.png"));
 			tier1 = ImageIO.read(new File("tier1treasure.png"));
@@ -59,16 +68,12 @@ public class submarineJPanel extends JPanel{
 		super.paint(g);
 		graph = g;
 		graph.drawImage(image,0,10,600,150,null);
-		
+		graph.drawImage(player1icon,player3BaseX,player3BaseY,null);
 		refresh();
-		draw1();
-		draw2();
-		draw3();
-		draw4();
-	}
-	public void move(int i, Player user1, boolean diving){
-		player1xVal +=10;
-		//player1yVal +=10;
+		//draw1();
+		//draw2();
+		//draw3();
+		//draw4();
 	}
 	public void refresh(){
 		int xVal = 630;
@@ -127,7 +132,9 @@ public class submarineJPanel extends JPanel{
 		graph.drawImage(player4icon,values.getX(31),values.getY(31),null);
 	}
 	public void move1(){
-		
+		while (){
+
+		}
 	}
 	public void move2(){
 

@@ -46,7 +46,7 @@ public class deepSeaGame implements ActionListener, MouseListener, KeyListener{
         xPos = 0;
         yPos = 0;
         airCount = 25;
-        currentTurn = 1;
+        //currentTurn = 0;
         status = 0;
 
         ruins = new ArrayList(32);
@@ -231,7 +231,12 @@ public class deepSeaGame implements ActionListener, MouseListener, KeyListener{
             currentTurn = 4 ;
         }
         if (e.getSource()==dive){
-            status =1;
+            if (currentTurn==0){
+                //do nothing
+            }
+            else if(currentTurn>0){
+                status =1;
+            }
         }
         if (e.getSource()==returnToSub){
             status = 2;
@@ -250,6 +255,9 @@ public class deepSeaGame implements ActionListener, MouseListener, KeyListener{
                 user1.addTreasure();
             }
         }*/
+        if (status ==0){
+            curPlayer.setText("Choose Player");
+        }
         turn();
         submarine.repaint();
         panelText.repaint();
@@ -290,8 +298,9 @@ public class deepSeaGame implements ActionListener, MouseListener, KeyListener{
         
     }
     public int diceRoll(){
-        int dice = (int)(Math.random()*5)+2;
-        return dice;
+        int dice = (int)(Math.random()*3)+1;
+        int dice1 = (int)(Math.random()*3)+1;
+        return dice+dice1;
     }
     public int move(){
         int move = diceRoll();
@@ -328,7 +337,7 @@ public class deepSeaGame implements ActionListener, MouseListener, KeyListener{
                 if (status==1){
                     int diving = move();
                     instruct.setText("You are gonna be diving "+diving);
-                    submarine.move(diving,user1,true);
+                    
                 }
                 if (status==2){
                     instruct.setText("Press Dive");
@@ -341,12 +350,12 @@ public class deepSeaGame implements ActionListener, MouseListener, KeyListener{
                 if (status==1){
                     int diving = move();
                     instruct.setText("You are gonna be diving "+diving);
-                    submarine.move(diving,user1,true);
+                    
                 }
                 if (status ==2){
                    int diving = move();
                    instruct.setText("You are gonna be returning "+diving);
-                   submarine.move(diving,user1,false); 
+                   
                 }
                 status =0;
             }
@@ -360,7 +369,7 @@ public class deepSeaGame implements ActionListener, MouseListener, KeyListener{
                 if (status==1){
                     int diving = move();
                     instruct.setText("You are gonna be diving "+diving);
-                    submarine.move(diving,user2,true);
+                    
                 }
                 if (status==2){
                     instruct.setText("Press Dive");
@@ -373,12 +382,12 @@ public class deepSeaGame implements ActionListener, MouseListener, KeyListener{
                 if (status==1){
                     int diving = move();
                     instruct.setText("You are gonna be diving "+diving);
-                    submarine.move(diving,user2,true);
+                    
                 }
                 if (status ==2){
                    int diving = move();
                    instruct.setText("You are gonna be returning "+diving);
-                   submarine.move(diving,user2,false); 
+                    
                 }
                 status =0;
             }
@@ -391,7 +400,7 @@ public class deepSeaGame implements ActionListener, MouseListener, KeyListener{
                 if (status==1){
                     int diving = move();
                     instruct.setText("You are gonna be diving "+diving);
-                    submarine.move(diving,user3,true);
+                    
                 }
                 if (status==2){
                     instruct.setText("Press Dive");
@@ -404,12 +413,12 @@ public class deepSeaGame implements ActionListener, MouseListener, KeyListener{
                 if (status==1){
                     int diving = move();
                     instruct.setText("You are gonna be diving "+diving);
-                    submarine.move(diving,user3,true);
+                    
                 }
                 if (status ==2){
                    int diving = move();
                    instruct.setText("You are gonna be returning "+diving);
-                   submarine.move(diving,user3,false); 
+                   
                 }
                 status =0;
             }
@@ -422,7 +431,7 @@ public class deepSeaGame implements ActionListener, MouseListener, KeyListener{
                 if (status==1){
                     int diving = move();
                     instruct.setText("You are gonna be diving "+diving);
-                    submarine.move(diving,user4,true);
+                    
                 }
                 if (status==2){
                     instruct.setText("Press Dive");
@@ -435,12 +444,12 @@ public class deepSeaGame implements ActionListener, MouseListener, KeyListener{
                 if (status==1){
                     int diving = move();
                     instruct.setText("You are gonna be diving "+diving);
-                    submarine.move(diving,user4,true);
+                    
                 }
                 if (status ==2){
                    int diving = move();
                    instruct.setText("You are gonna be returning "+diving);
-                   submarine.move(diving,user4,false); 
+                    
                 }
                 status =0;
             }
