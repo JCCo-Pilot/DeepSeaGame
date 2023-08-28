@@ -3,7 +3,6 @@ import java.util.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.JFrame.*;
-import java.awt.Graphics;
 public class deepSeaGame implements ActionListener, MouseListener, KeyListener{
     JFrame frame;
 	
@@ -142,7 +141,7 @@ public class deepSeaGame implements ActionListener, MouseListener, KeyListener{
         curPlayer = new JTextField();
         curPlayer.setBounds(5,5,300,50);
         curPlayer.setFont(myFont);
-        curPlayer.setText("It is Player 1's turn");
+        curPlayer.setText("Choose a player");
         //curPlayer.setEditable(false);
 
         instruct = new JTextField();
@@ -209,6 +208,13 @@ public class deepSeaGame implements ActionListener, MouseListener, KeyListener{
         frame.setVisible(true);
 
         
+    }
+    public void constantDraw(){
+        while(true){
+            submarine.repaint();
+            panelText.repaint();
+            panel.repaint();
+        }
     }
     public void actionPerformed(ActionEvent e) {
         
