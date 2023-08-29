@@ -70,6 +70,7 @@ public class submarineJPanel extends JPanel{
 		graph.drawImage(image,0,10,600,150,null);
 		graph.drawImage(player1icon,player3BaseX,player3BaseY,null);
 		refresh();
+		drawBase1();
 		//draw1();
 		//draw2();
 		//draw3();
@@ -130,6 +131,18 @@ public class submarineJPanel extends JPanel{
 	}
 	public void draw4(){
 		graph.drawImage(player4icon,values.getX(31),values.getY(31),null);
+	}
+	public void drawBase1(){
+		graph.drawImage(player1icon,player1BaseX,player1BaseY,null);
+	}
+	public void drawBas2(){
+
+	}
+	public void drawBase3(){
+
+	}
+	public void drawBase4(){
+
 	}
 	public void move1(){
 		while (){
