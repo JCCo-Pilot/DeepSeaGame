@@ -456,5 +456,8 @@ public class deepSeaGame implements ActionListener, MouseListener, KeyListener{
         }
         
     }
+    //rules for each turn
+    //diving doesnt cost air but carrying treasure costs air
+    //you can only dive once
       
 }
