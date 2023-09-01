@@ -36,14 +36,14 @@ public class submarineJPanel extends JPanel{
 		values = new treasurePlacement();
 		ruins = r;
 		result = true;
-		player1BaseX=50;
-		player1BaseY=50;
-		player2BaseX= 150;
-		player2BaseY=50;
-		player3BaseX= 250;
-		player3BaseY=50;
-		player4BaseX= 350;
+		player4BaseX=100;
 		player4BaseY=50;
+		player3BaseX= 200;
+		player3BaseY=50;
+		player2BaseX= 300;
+		player2BaseY=50;
+		player1BaseX= 400;
+		player1BaseY=50;
 		try {
 			image = ImageIO.read(new File("submarine.png"));
 			tier1 = ImageIO.read(new File("tier1treasure.png"));
@@ -68,9 +68,12 @@ public class submarineJPanel extends JPanel{
 		super.paint(g);
 		graph = g;
 		graph.drawImage(image,0,10,600,150,null);
-		graph.drawImage(player1icon,player3BaseX,player3BaseY,null);
+		//graph.drawImage(player1icon,player3BaseX,player3BaseY,null);
 		refresh();
 		drawBase1();
+		drawBase2();
+		drawBase3();
+		drawBase4();
 		//draw1();
 		//draw2();
 		//draw3();
@@ -81,7 +84,7 @@ public class submarineJPanel extends JPanel{
 		int yVal = 10;
 		int width = 150;
 		int height = 150;
-		// first row
+		// draws the ruins
 		for (int i = 0; i<ruins.size();i++){
 			if (!ruins.get(i).isBlank()&&ruins.get(i).getTier()==1){
 				graph.drawImage(tier1,xVal,yVal,width,height,null);
@@ -120,8 +123,10 @@ public class submarineJPanel extends JPanel{
 		//graph.drawImage(player1icon,660,40,Color.WHITE,null);
 		//graph.drawImage(player2icon,110+160,230+180,Color.WHITE,null);
 	}
-	public void draw1(){
-		graph.drawImage(player1icon,values.getX(1+4),values.getY(1+4),null);
+	public void draw1(int distance){
+		graph.drawImage(player1icon,values.getX(5),values.getY(5),null);
+		System.out.println("draw 1 called");
+		repaint();
 	}
 	public void draw2(){
 		graph.drawImage(player2icon,values.getX(2+4),values.getY(2+4),null);
@@ -135,18 +140,18 @@ public class submarineJPanel extends JPanel{
 	public void drawBase1(){
 		graph.drawImage(player1icon,player1BaseX,player1BaseY,null);
 	}
-	public void drawBas2(){
-
+	public void drawBase2(){
+		graph.drawImage(player2icon,player2BaseX,player2BaseY,null);
 	}
 	public void drawBase3(){
-
+		graph.drawImage(player3icon,player3BaseX,player3BaseY,null);
 	}
 	public void drawBase4(){
-
+		graph.drawImage(player4icon,player4BaseX,player4BaseY,null);
 	}
-	public void move1(){
-		while (){
-
+	public void movePlayer(int currentPlayer,int movement){
+		if (currentPlayer==1){
+			draw1(movement);
 		}
 	}
 	public void move2(){

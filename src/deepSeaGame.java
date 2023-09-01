@@ -248,8 +248,11 @@ public class deepSeaGame implements ActionListener, MouseListener, KeyListener{
 
         }
         if (e.getSource()==move){
-
+            submarine.movePlayer(1,diceRoll());
+            System.out.println(diceRoll());
+            submarine.repaint();
         }
+        submarine.repaint();
         /*if (e.getSource()==pickUp){
             if (currentTurn ==1){
                 user1.addTreasure();
